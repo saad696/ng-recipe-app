@@ -5,23 +5,34 @@
 </div>
 <div class="row">
   <div class="col-xs-12">
-    <h1>Recipe Name</h1>
+    <img [src]="recipe.imagePath" [alt]="recipe.name" width="300" class="thumbnail img-responsive" />
+    <h1>{{ recipe.name }}</h1>
   </div>
 </div>
 <div class="row">
   <div class="col-xs-12">
-    <div class="btn-group">
-      <button type="button" class="btn btn-primary toggle">Manage recipe <span class="caret"></span></button>
-        <ul class="dropdown-menu">
-          <li><a href="#">To shopping List</a></li>
-          <li><a href="#">Edit Recipe</a></li>
-          <li><a href="#">Delete Recipe</a></li>
-        </ul>
+    <div class="btn-group" appDropdown>
+      <button type="button" class="btn btn-primary toggle">
+        Manage recipe <span class="caret"></span>
+      </button>
+      <ul class="dropdown-menu">
+        <li><a href="#">To shopping List</a></li>
+        <li><a href="#">Edit Recipe</a></li>
+        <li><a href="#">Delete Recipe</a></li>
+      </ul>
     </div>
   </div>
 </div>
 <div class="row">
-  <div class="col-xs-12">Description</div>
+  <div class="col-xs-12">
+    <div class="card border-gray-200 border-[1px] shadow-md my-4">
+      <div class="card-body flex justify-between items-center space-x-3 p-4">
+        <div>
+          <p>{{ recipe.description }}</p>
+        </div>
+      </div>
+    </div>
+  </div>
 </div>
 <div class="row">
   <div class="col-xs-12">Ingredients</div>
