@@ -9,6 +9,8 @@ export class AppComponent {
   title = 'recipe-app';
   selectedTag = 1
 
+
+
   onNavigationSelect(tag) {
     this.selectedTag = tag
   }

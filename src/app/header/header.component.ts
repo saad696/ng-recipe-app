@@ -1,4 +1,5 @@
 import { Component, EventEmitter, OnInit, Output } from '@angular/core';
+import { ShoppingList } from '../services/shopping-list.service';
 
 @Component({
   selector: 'app-header',
@@ -8,11 +9,18 @@ import { Component, EventEmitter, OnInit, Output } from '@angular/core';
 export class HeaderComponent implements OnInit {
   @Output() navigationTag = new EventEmitter<number>();
 
-  constructor() {}
+  constructor(private slService: ShoppingList) {}
 
-  ngOnInit(): void {}
+  ngOnInit(): void {
+    this.slService.onIngredientsSet.subscribe((isSet: boolean) => {
+      console.log(isSet);
+      if (isSet) {
+        this.navigationTag.emit(2);
+      }
+    });
+  }
 
   onNavigate(tag: number) {
-    this.navigationTag.emit(tag)
+    this.navigationTag.emit(tag);
   }
 }
