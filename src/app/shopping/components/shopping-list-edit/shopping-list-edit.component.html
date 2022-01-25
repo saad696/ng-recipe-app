@@ -1,22 +1,35 @@
 <div class="shadow-md border-[1px] border-gray-200 rounded p-8">
   <h3 class="mt-0">Edit Recipe</h3>
-  <hr>
+  <hr />
   <div class="row">
     <div class="col-xs-12">
       <form>
         <div class="row">
           <div class="col-sm-5 form-group">
             <label for="name">Name</label>
-            <input type="text" id="name" class="form-control" />
+            <input
+              type="text"
+              id="name"
+              class="form-control"
+              [(ngModel)]="name"
+              [ngModelOptions]="{ standalone: true }"
+            />
           </div>
           <div class="col-sm-2 form-group">
             <label for="">Amount</label
-            ><input type="number" id="amount" class="form-control" />
+            ><input
+              type="text"
+              id="amount"
+              class="form-control"
+              [(ngModel)]="amount"
+              [ngModelOptions]="{ standalone: true }"
+            />
           </div>
         </div>
         <div class="row">
           <div class="col-xs-12 space-x-3">
-            <button type="submit" class="btn btn-success">Add</button
+            <button type="submit" class="btn btn-success" (click)="addItem()">
+              Add</button
             ><button class="btn btn-danger">Delete</button
             ><button class="btn btn-warning">Clear</button>
           </div>
